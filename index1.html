@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Alarme</title>
+        <link rel="stylesheet" href="estilo1.css">
+
+        <script type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"> 
+    </script>
+        <script nomodule src="https: // unpkg .com / ionicons @ 5.5.2 / dist /
+            ionicons / ionicons.js"> 
+    </script>
+
+
+    </head>
+    <body onload="reloud()">
+
+        <div id="container">
+            <div id="cabecario">
+
+                <span id="mostrarHoras"> </span>
+
+                <span id="ajuste-alarme">Alarme</span>
+
+                <div id="adicionar" onclick="aparecer()">
+                    <ion-icon name="add-circle"></ion-icon>
+
+                </div>
+
+            </div>
+
+
+
+
+            <div id="container-alarmes">
+
+
+
+
+
+
+
+
+               
+            </div>
+
+            <div class="abainput">
+
+                <div id="add-Time">
+
+
+                    <div class="add-time-header">
+
+                        <input id="input" type="time" max="25:00">
+                        <ion-icon id="btn-add" name="add-circle-outline"></ion-icon>
+
+
+                    </div>
+
+                    <div id="ajuste-nomeTarefa">
+                        <span style="font-size: 10px;">Nome do alarme:</span>
+                        <input type="text" id="nomeTarefa" placeholder="maximo 10 caracter" maxlength="18">
+                    </div>
+
+
+                    <div id="ajustecancelar">
+                        <span onclick="desaparecer()" id="ajustecancelar">
+                            Cancelar </span>
+                            
+                    </div>
+
+                </div>
+
+
+            </div>
+            
+
+
+            <div class="notification">
+
+                <div class="calibrate">
+
+                    <ion-icon name="alarm-outline"></ion-icon><span> Alarme</span>
+
+                </div>
+                
+                <audio id="play" src="Press Fuse - French Fuse.mp3"  ></audio>
+
+                <span id="notification-name">nome alarme</span>
+
+                <div style="font-size: 1.5rem;" id="time-notification"> 19:00</div>
+
+                <div onclick="vanishNotificação()"  id="cursor">ok </div>
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+        <script src="app.js"></script>
+    </body>
+</html>
