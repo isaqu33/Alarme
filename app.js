@@ -5,6 +5,7 @@ var ShowAlarmar = document.querySelector(".notification")
 var musica = document.querySelector("#play")
 var imputEditHora = document.querySelector("#input-edit")
 var imputEditnome = document.querySelector("#imputTarefaedit")
+var canceleditalarm = document.querySelector(".cancelar-edit")
 
 var indexAlarmeAtivo = "";
 
@@ -288,11 +289,7 @@ function editarAlarme(){
 
 }
 
+canceleditalarm.addEventListener("click", () =>{
 
-
-
-
-
-
-// console.log(alarmar())
-
+    document.querySelector(".abainputajusttime").style.display ="none"
+})
