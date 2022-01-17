@@ -19,6 +19,7 @@
     <body onload="reloud()">
 
         <div id="container">
+
             <div id="cabecario">
 
                 <span id="mostrarHoras"> </span>
@@ -44,39 +45,57 @@
 
 
 
-               
+
             </div>
+
+            <!-- tela de adicionar novos alarmes-------------------------------------------------------------------- -->
+
 
             <div class="abainput">
 
+                <div class="adjust">
+                    <span style="border-bottom: brown 0.5px solid;">Novo Alarme</span>
+                </div>
+                
+
                 <div id="add-Time">
+
+                    <div class="ajuste-nomeTarefa">
+
+                        <span>Escolha um horário:</span>   
+                        
+                    </div>
 
 
                     <div class="add-time-header">
 
                         <input id="input" type="time" max="25:00">
-                        <ion-icon id="btn-add" name="add-circle-outline"></ion-icon>
+                        
+                    </div>
+                    
 
+                    <div class="ajuste-nomeTarefa">
 
+                        <span>Nome do alarme:</span>   
+                        
                     </div>
 
-                    <div id="ajuste-nomeTarefa">
-                        <span style="font-size: 10px;">Nome do alarme:</span>
-                        <input type="text" id="nomeTarefa" placeholder="maximo 10 caracter" maxlength="18">
-                    </div>
+                    
 
+                    <span id="btn-add"  class="ajustesalvar" onclick="adicionar()" >Salvar</span>
 
-                    <div id="ajustecancelar">
-                        <span onclick="desaparecer()" id="ajustecancelar">
-                            Cancelar </span>
-                            
-                    </div>
+                    <span onclick="desaparecer()" class="ajustecancelar">
+                        Cancelar
+                    </span>
 
+                </div>
+                <div class="ajuste-nomeinput">
+                    <input type="text" id="nomeTarefa" placeholder=" Máximo 10 caracter" maxlength="18">
                 </div>
 
 
             </div>
-            
+
 
 
             <div class="notification">
@@ -84,18 +103,63 @@
                 <div class="calibrate">
 
                     <ion-icon name="alarm-outline"></ion-icon><span> Alarme</span>
-
                 </div>
-                
-                <audio id="play" src="Press Fuse - French Fuse.mp3"  ></audio>
 
+                <audio id="play" src="Press Fuse - French Fuse.mp3"></audio>
                 <span id="notification-name">nome alarme</span>
 
                 <div style="font-size: 1.5rem;" id="time-notification"> 19:00</div>
-
-                <div onclick="vanishNotificação()"  id="cursor">ok </div>
+                <div onclick="vanishNotificação()" id="cursor">ok </div>
 
             </div>
+
+            <!-- imput para editar alarme existente-------------------------------- -->
+
+            <div class="abainputajusttime">
+
+                <div class="add-Time-adit">
+
+                    <span>Digite um novo horário:</span>
+
+                    <div class="header-time-edit">
+
+                        <input id="input-edit" type="time" max="25:00">
+                        
+
+                    </div>
+
+                    <div id="nomeTarefa-edit">
+                        <span style="font-size: 1rem">Nome do alarme:</span>
+                        <input type="text" id="imputTarefaedit"
+                            placeholder="10 caracter" maxlength="18">
+                    </div>
+
+                    <div class="nomesalvarcancelar">
+
+                        <div class="cancelar-edit">
+                            <span>
+                                Cancelar 
+                            </span>
+    
+                        </div>
+                        <div class="salvar-edit">
+                            <span >
+                                Salvar 
+                            </span>
+    
+                        </div>
+
+
+                    </div>
+                   
+
+                </div>
+
+
+            </div>
+
+
+
 
 
 

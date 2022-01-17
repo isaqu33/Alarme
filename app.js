@@ -3,6 +3,8 @@ var mostrar = document.getElementById("container-alarmes")
 var nomeTarefa = document.getElementById("nomeTarefa")
 var ShowAlarmar = document.querySelector(".notification")
 var musica = document.querySelector("#play")
+var imputEditHora = document.querySelector("#input-edit")
+var imputEditnome = document.querySelector("#imputTarefaedit")
 
 var indexAlarmeAtivo = "";
 
@@ -139,15 +141,15 @@ var atualizarHoras = setInterval(() => {
 
 function aparecer() {
     let classe = document.querySelector(".abainput");
-    classe.style.display = "flex";
+    classe.style.transform = "translateY(0%)"
 
-    document.querySelector("#btn-add").addEventListener("click", adicionar)
+    
 
 }
 
 function desaparecer() {
     let classe = document.querySelector(".abainput");
-    classe.style.display = "none";
+    classe.style.transform = "translateY(100%)"
 
 }
 
@@ -248,12 +250,15 @@ function setNewDado(parametro){
     banco.forEach((Element, index) => {
         
         if (`${Element.id}` == parametro) {
+
+           let domnotificar =  document.querySelector(".abainputajusttime")
+           domnotificar.style.display ="flex"
             
-            aparecer( input.value = Element.horario, nomeTarefa.value = Element.nome ) 
+           imputEditHora.value = Element.horario, imputEditnome.value = Element.nome
             
             indexAlarmeAtivo = index
             
-            document.querySelector("#btn-add").addEventListener("click", editarAlarme)
+            document.querySelector(".salvar-edit").addEventListener("click", editarAlarme)
         }
 
         
@@ -269,15 +274,17 @@ function editarAlarme(){
 
     let elemento = banco[indexAlarmeAtivo]
 
-    elemento.horario = input.value
 
-    elemento.nome = nomeTarefa.value
+    elemento.horario = imputEditHora.value
+
+    elemento.nome = imputEditnome.value
 
     dbSave(banco)
 
     aparecerDom()
 
-    desaparecer()
+    let classe = document.querySelector(".abainputajusttime");
+    classe.style.display = "none"
 
 }
 
