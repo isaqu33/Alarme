@@ -1,162 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Alarme</title>
-        <link rel="stylesheet" href="estilo1.css">
 
-        <script type="module"
-            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarme</title>
+    <link rel="stylesheet" href="estilo1.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js">
     </script>
-        <script nomodule src="https: // unpkg .com / ionicons @ 5.5.2 / dist /
-            ionicons / ionicons.js"> 
-    </script>
+    <script nomodule src="https: // unpkg .com / ionicons @ 5.5.2 / dist /
+            ionicons / ionicons.js">
+            </script>
 
 
-    </head>
-    <body onload="reloud()">
+</head>
 
-        <div id="container">
+<body onload="reloud()">
 
-            <div id="cabecario">
+    <div id="container">
+
+        <div id="cabecario">
+
+            <div class="cardClock">
 
                 <span id="mostrarHoras"> </span>
-
-                <span id="ajuste-alarme">Alarme</span>
-
-                <div id="adicionar" onclick="aparecer()">
-                    <ion-icon name="add-circle"></ion-icon>
-
-                </div>
-
             </div>
 
 
+            <span id="ajuste-alarme">Simple Alarm</span>
 
-
-            <div id="container-alarmes">
-
-
-
-
-
-
-
-
+            <div id="adicionar" onclick="aparecer()">
+                <ion-icon name="add-circle"></ion-icon>
 
             </div>
 
-            <!-- tela de adicionar novos alarmes-------------------------------------------------------------------- -->
-
-
-            <div class="abainput">
-
-                <div class="adjust">
-                    <span style="border-bottom: brown 0.5px solid;">Novo Alarme</span>
-                </div>
-                
-
-                <div id="add-Time">
-
-                    <div class="ajuste-nomeTarefa">
-
-                        <span>Escolha um horário:</span>   
-                        
-                    </div>
-
-
-                    <div class="add-time-header">
-
-                        <input id="input" type="time" max="25:00">
-                        
-                    </div>
-                    
-
-                    <div class="ajuste-nomeTarefa">
-
-                        <span>Nome do alarme:</span>   
-                        
-                    </div>
-
-                    
-
-                    <span id="btn-add"  class="ajustesalvar" onclick="adicionar()" >Salvar</span>
-
-                    <span onclick="desaparecer()" class="ajustecancelar">
-                        Cancelar
-                    </span>
-
-                </div>
-                <div class="ajuste-nomeinput">
-                    <input type="text" id="nomeTarefa" placeholder=" Máximo 10 caracter" maxlength="18">
-                </div>
-
-
-            </div>
+        </div>
 
 
 
-            <div class="notification">
 
-                <div class="calibrate">
-
-                    <ion-icon name="alarm-outline"></ion-icon><span> Alarme</span>
-                </div>
-
-                <audio id="play" src="Press Fuse - French Fuse.mp3"></audio>
-                <span id="notification-name">nome alarme</span>
-
-                <div style="font-size: 1.5rem;" id="time-notification"> 19:00</div>
-                <div onclick="vanishNotificação()" id="cursor">ok </div>
-
-            </div>
-
-            <!-- imput para editar alarme existente-------------------------------- -->
-
-            <div class="abainputajusttime">
-
-                <div class="add-Time-adit">
-
-                    <span>Digite um novo horário:</span>
-
-                    <div class="header-time-edit">
-
-                        <input id="input-edit" type="time" max="25:00">
-                        
-
-                    </div>
-
-                    <div id="nomeTarefa-edit">
-                        <span style="font-size: 1rem">Nome do alarme:</span>
-                        <input type="text" id="imputTarefaedit"
-                            placeholder="10 caracter" maxlength="18">
-                    </div>
-
-                    <div class="nomesalvarcancelar">
-
-                        <div class="cancelar-edit">
-                            <span>
-                                Cancelar 
-                            </span>
-    
-                        </div>
-                        <div class="salvar-edit">
-                            <span >
-                                Salvar 
-                            </span>
-    
-                        </div>
-
-
-                    </div>
-                   
-
-                </div>
-
-
-            </div>
+        <div id="container-alarmes">
 
 
 
@@ -168,7 +57,127 @@
 
         </div>
 
+        <!-- tela de adicionar novos alarmes-------------------------------------------------------------------- -->
 
-        <script src="app.js"></script>
-    </body>
+
+        <div class="abainput">
+
+            <div class="adjust">
+                <span >Novo Alarme</span>
+            </div>
+
+
+            <div id="add-Time">
+
+                <div class="ajuste-nomeTarefa">
+
+                    <span>Escolha um horário:</span>
+
+                </div>
+
+
+                <div class="add-time-header">
+
+                    <input id="input" type="time" max="25:00">
+
+                    <div class="ajuste-nomeinput">
+                        <input type="text" id="nomeTarefa" placeholder="Nome (Máximo 10 caracter)" maxlength="18">
+                    </div>
+
+                </div>
+
+
+                
+
+
+
+                <span id="btn-add" class="ajustesalvar" onclick="adicionar()">
+                    Save
+                </span>
+
+                <span onclick="desaparecer()" class="ajustecancelar">
+                    Cancel
+                </span>
+
+            </div>
+            
+
+
+        </div>
+
+
+
+        <div class="notification">
+
+            <div class="calibrate">
+
+                <ion-icon name="alarm-outline"></ion-icon><span> Alarme</span>
+            </div>
+
+            <audio id="play" src="Press Fuse - French Fuse.mp3"></audio>
+            <span id="notification-name">nome alarme</span>
+
+            <div style="font-size: 1.5rem;" id="time-notification"> 19:00</div>
+            <div onclick="vanishNotificação()" id="cursor">ok </div>
+
+        </div>
+
+        <!-- imput para editar alarme existente-------------------------------- -->
+
+        <div class="abainputajusttime">
+
+            <div class="add-Time-adit">
+
+                <span>Digite um novo horário:</span>
+
+                <div class="header-time-edit">
+
+                    <input id="input-edit" type="time" max="25:00">
+
+
+                </div>
+
+                <div id="nomeTarefa-edit">
+                    <span style="font-size: 1rem">Nome do alarme:</span>
+                    <input type="text" id="imputTarefaedit" placeholder="10 caracter" maxlength="18">
+                </div>
+
+                <div class="nomesalvarcancelar">
+
+                    <div class="cancelar-edit">
+                        <span>
+                            Cancelar
+                        </span>
+
+                    </div>
+                    <div class="salvar-edit">
+                        <span>
+                            Salvar
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
 </html>

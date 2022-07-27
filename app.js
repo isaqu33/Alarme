@@ -94,9 +94,7 @@ function adicionar() {
         alert("Nenhuma atividade foi adicionada!")
 
 
-    }
-
-    else {
+    } else {
 
         adicionarObjeto(input.value, nomeTarefa.value);
         aparecerDom()
@@ -122,10 +120,10 @@ function getHoras() {
 
     let horas = hoje.getHours();
     let minutos = hoje.getMinutes();
-    // let segundos = hoje.getSeconds();
+    let segundos = hoje.getSeconds();
 
 
-    let mostrar = `${("0" + horas).slice(-2)}:${("0" + minutos).slice(-2)}`
+    let mostrar = `${("0" + horas).slice(-2)}:${("0" + minutos).slice(-2)}:${("0" + segundos).slice(-2)}`
 
     return mostrar
 }
@@ -144,7 +142,7 @@ function aparecer() {
     let classe = document.querySelector(".abainput");
     classe.style.transform = "translateY(0%)"
 
-    
+
 
 }
 
@@ -157,7 +155,11 @@ function desaparecer() {
 
 
 
-function getHtml({ horario, id, nome }) {
+function getHtml({
+    horario,
+    id,
+    nome
+}) {
 
 
     let aparecer = `
@@ -195,7 +197,9 @@ function aparecerDom() {
 function apagar(elemento) {
     const banco = bdGet();
 
-    const novoarrey = banco.filter(({ id }) => id != elemento)
+    const novoarrey = banco.filter(({
+        id
+    }) => id != elemento)
 
     dbSave(novoarrey)
 
@@ -204,22 +208,22 @@ function apagar(elemento) {
 }
 
 function appearNotificação() {
-    
+
     let classe = document.querySelector(".notification");
     classe.style.display = "flex";
     playerPlay()
 
 }
 
-function vanishNotificação(){
-    let classe= document.querySelector(".notification")
+function vanishNotificação() {
+    let classe = document.querySelector(".notification")
     classe.style.display = "none"
 
     playerStop()
 }
 
 
-function notificar(obj){
+function notificar(obj) {
 
     document.querySelector("#notification-name").innerHTML = obj.nome
 
@@ -232,44 +236,44 @@ function notificar(obj){
 }
 
 
-function playerPlay(){
-    musica.play( );
+function playerPlay() {
+    musica.play();
 
 }
 
-function playerStop(){
+function playerStop() {
 
-    musica.pause( )
+    musica.pause()
     musica.currentTime = 0;
 }
 
-function setNewDado(parametro){
+function setNewDado(parametro) {
 
     let banco = bdGet();
 
-    
+
     banco.forEach((Element, index) => {
-        
+
         if (`${Element.id}` == parametro) {
 
-           let domnotificar =  document.querySelector(".abainputajusttime")
-           domnotificar.style.display ="flex"
-            
-           imputEditHora.value = Element.horario, imputEditnome.value = Element.nome
-            
+            let domnotificar = document.querySelector(".abainputajusttime")
+            domnotificar.style.display = "flex"
+
+            imputEditHora.value = Element.horario, imputEditnome.value = Element.nome
+
             indexAlarmeAtivo = index
-            
+
             document.querySelector(".salvar-edit").addEventListener("click", editarAlarme)
         }
 
-        
+
 
     });
 
-   
+
 }
 
-function editarAlarme(){
+function editarAlarme() {
 
     let banco = bdGet();
 
@@ -289,7 +293,7 @@ function editarAlarme(){
 
 }
 
-canceleditalarm.addEventListener("click", () =>{
+canceleditalarm.addEventListener("click", () => {
 
-    document.querySelector(".abainputajusttime").style.display ="none"
+    document.querySelector(".abainputajusttime").style.display = "none"
 })
